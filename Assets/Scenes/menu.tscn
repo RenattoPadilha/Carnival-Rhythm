@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://cmrr68flkgd5k"]
 
+[ext_resource type="Texture2D" uid="uid://own3fwca2kme" path="res://Assets/pngtree-a-black-pixelated-musical-note-icon-in-retro-8-bit-style-vector-png-image_15997624.png" id="1_trrmg"]
+[ext_resource type="FontFile" uid="uid://csapjdw3b8iy2" path="res://Assets/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="2_sph7x"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sph7x"]
+diffuse_texture = ExtResource("1_trrmg")
+
 [node name="Control" type="Control" unique_id=902416814]
 layout_mode = 3
 anchors_preset = 15
@@ -12,14 +18,62 @@ grow_vertical = 2
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
+color = Color(0, 0.3687258, 0.31452185, 1)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="." unique_id=1168088791]
+position = Vector2(291, 622)
+scale = Vector2(3.8, 1)
+amount = 1
+texture = SubResource("CanvasTexture_sph7x")
+lifetime = 18.0
+use_fixed_seed = true
+seed = 689034
+fixed_fps = 60
+direction = Vector2(-1, 0)
+gravity = Vector2(2980, -980)
+angular_velocity_max = 1.0
+orbit_velocity_max = 20.0
+linear_accel_min = 5.0
+linear_accel_max = 10.0
 
 [node name="Label" type="Label" parent="." unique_id=885959254]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -476.0
+offset_top = 63.0
+offset_right = 532.0
+offset_bottom = 208.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_sph7x")
+theme_override_font_sizes/font_size = 120
 text = "Carnaval Rhythm"
 
 [node name="Button" type="Button" parent="." unique_id=263317759]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -88.0
+offset_top = 248.0
+offset_right = 1275.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 50
+text = "Começar a folia"
+
+[node name="Button2" type="Button" parent="." unique_id=844730139]
+layout_mode = 0
+offset_left = -4.9999695
+offset_top = 366.0
+offset_right = 1440.7467
+offset_bottom = 511.0
+scale = Vector2(0.84039617, 0.8400012)
+theme_override_font_sizes/font_size = 80
+text = "Créditos"
+
+[node name="Button3" type="Button" parent="." unique_id=754448550]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 536.0
+offset_right = 1151.0
+offset_bottom = 586.0
+theme_override_font_sizes/font_size = 30
+text = "Sair para a área de trabalho"
