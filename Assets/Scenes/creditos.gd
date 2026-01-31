@@ -1,7 +1,7 @@
 extends Button
-
+@export var panel: Panel
+@onready var anim := panel.get_node("AnimationPlayer")
 @export var cor_texto := Color.WHITE
-
 func _ready():
 	var bg = get_tree().get_first_node_in_group("background")
 	if bg:
@@ -25,3 +25,6 @@ func _atualizar_cor(cor_bg: Color):
 	add_theme_color_override("font_pressed_color", nova_cor)
 	add_theme_color_override("font_focus_color", nova_cor)
 	add_theme_color_override("font_disabled_color", nova_cor)
+
+func _on_pressed() -> void:
+	panel.visible = !panel.visible # Replace with function body.
