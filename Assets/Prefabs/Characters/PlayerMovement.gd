@@ -2,7 +2,7 @@ extends Node
 
 class_name MovementComponent
 
-@export var speed: float = 200
+#@export var speed: float = 200
 @export var lines: Array[float] = [192, 0, -192]
 @export var line_change_speed: float = 10
 
@@ -28,7 +28,7 @@ func _handle_mov_input():
 		curr_lane_index = max(curr_lane_index-1, 0)
 
 func _apply_movement(delta: float):
-	body.velocity.x = speed
+	#body.velocity.x = speed
 	
 	#changing line
 	var target_y = lines[curr_lane_index]

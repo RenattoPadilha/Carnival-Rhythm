@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://m0vjdjk1tjmy"]
+[gd_scene load_steps=5 format=3 uid="uid://m0vjdjk1tjmy"]
 
 [ext_resource type="PackedScene" uid="uid://d173poj0gsaby" path="res://Assets/Prefabs/Characters/player.tscn" id="1_y8avt"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="2_ugxin"]
+[ext_resource type="Script" uid="uid://bhoc7tuwxmfkb" path="res://Assets/Scripts/teste_musica.gd" id="3_2nn5y"]
+[ext_resource type="AudioStream" uid="uid://deiqk02nvi0i8" path="res://Assets/Art/Sounds/Samba Playback (100 bpm) _ Surdo  Pandeiro  Tamborim (clave 1).mp3" id="4_h40gu"]
 
 [node name="PlayerTest" type="Node2D"]
 
@@ -25,3 +27,8 @@ texture = ExtResource("2_ugxin")
 [node name="Player" parent="." instance=ExtResource("1_y8avt")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("3_2nn5y")
+level_music = ExtResource("4_h40gu")
+bpm = 100
