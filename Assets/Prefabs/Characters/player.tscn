@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_anmmc"]
 [ext_resource type="Script" uid="uid://de1d74s4cy2ay" path="res://Assets/Scripts/player.gd" id="1_hvy1d"]
 [ext_resource type="Script" uid="uid://ctvj1wcykqexw" path="res://Assets/Scripts/PlayerHealth.gd" id="2_202x8"]
-[ext_resource type="Script" uid="uid://cnrog210g10es" path="res://Assets/Prefabs/Characters/PlayerMovement.gd" id="4_2d7px"]
+[ext_resource type="Script" path="res://Assets/Scripts/PlayerMovement.gd" id="4_2d7px"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_202x8"]
 size = Vector2(112, 112)

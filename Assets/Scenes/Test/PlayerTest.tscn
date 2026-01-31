@@ -7,7 +7,19 @@
 
 [node name="PlayerTest" type="Node2D"]
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-200, -192)
+scale = Vector2(1, 13.2)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -216.0
+offset_top = -264.0
+offset_right = -176.0
+offset_bottom = -224.0
+scale = Vector2(1, 13.2)
+
 [node name="Lines" type="Node2D" parent="."]
+position = Vector2(-184, 0)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Lines"]
 position = Vector2(832, 192)
@@ -25,8 +37,10 @@ scale = Vector2(15, 0.1)
 texture = ExtResource("2_ugxin")
 
 [node name="Player" parent="." instance=ExtResource("1_y8avt")]
+position = Vector2(-192, 0)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(264, 0)
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("3_2nn5y")

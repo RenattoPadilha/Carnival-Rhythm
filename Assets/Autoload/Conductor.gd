@@ -36,10 +36,8 @@ func _report_change():
 	if curr_beat_int > last_reported_beat:
 		last_reported_beat = curr_beat_int
 		beat_emitted.emit(last_reported_beat)
-		print("beat novo")
 		if last_reported_beat % measures == 0:
 			measure_emitted.emit(last_reported_beat/measures)
-			print("measure novo")
 
 func play_from_start():
 	song_position = 0.0

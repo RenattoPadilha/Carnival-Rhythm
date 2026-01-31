@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://brbokqlsi8jca"]
+
+[ext_resource type="Texture2D" uid="uid://own3fwca2kme" path="res://Assets/pngtree-a-black-pixelated-musical-note-icon-in-retro-8-bit-style-vector-png-image_15997624.png" id="1_fdvlv"]
+[ext_resource type="Script" uid="uid://fxa1ej4wdoex" path="res://Assets/Scripts/Note.gd" id="1_y380j"]
+
+[node name="Note1" type="Node2D"]
+script = ExtResource("1_y380j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fdvlv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -112.0
+offset_top = -64.0
+offset_right = -72.0
+offset_bottom = -41.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
