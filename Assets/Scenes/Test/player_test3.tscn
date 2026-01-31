@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ywulgndnyrny"]
+
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_ixued"]
+[ext_resource type="PackedScene" uid="uid://d173poj0gsaby" path="res://Assets/Prefabs/Characters/player.tscn" id="2_l5p8d"]
+[ext_resource type="Script" uid="uid://bhoc7tuwxmfkb" path="res://Assets/Scripts/teste_musica.gd" id="3_ja4eh"]
+[ext_resource type="AudioStream" uid="uid://deiqk02nvi0i8" path="res://Assets/Art/Sounds/Samba Playback (100 bpm) _ Surdo  Pandeiro  Tamborim (clave 1).mp3" id="4_u10tq"]
+[ext_resource type="PackedScene" uid="uid://dgmmvub3dty8m" path="res://Assets/Scenes/Score.tscn" id="5_rivo0"]
+[ext_resource type="Script" uid="uid://cb2jwvnouh7o4" path="res://Assets/Scripts/NoteSpawner.gd" id="6_l5p8d"]
+
+[node name="PlayerTest" type="Node2D" unique_id=1885683332]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=240819582]
+position = Vector2(-200, -192)
+scale = Vector2(1, 13.2)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1901754586]
+offset_left = -216.0
+offset_top = -264.0
+offset_right = -176.0
+offset_bottom = -224.0
+scale = Vector2(1, 13.2)
+
+[node name="Lines" type="Node2D" parent="." unique_id=140821752]
+position = Vector2(-184, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Lines" unique_id=1708725595]
+position = Vector2(832, 192)
+scale = Vector2(15, 0.1)
+texture = ExtResource("1_ixued")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lines" unique_id=1760359385]
+position = Vector2(832, 0)
+scale = Vector2(15, 0.1)
+texture = ExtResource("1_ixued")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Lines" unique_id=1535798623]
+position = Vector2(832, -192)
+scale = Vector2(15, 0.1)
+texture = ExtResource("1_ixued")
+
+[node name="Player" parent="." unique_id=421308107 instance=ExtResource("2_l5p8d")]
+position = Vector2(-192, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=886544114]
+position = Vector2(264, 0)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1308603157]
+script = ExtResource("3_ja4eh")
+level_music = ExtResource("4_u10tq")
+bpm = 100
+
+[node name="Score" parent="." unique_id=911321027 instance=ExtResource("5_rivo0")]
+
+[node name="Spawner" type="Node2D" parent="." unique_id=474843741]
+script = ExtResource("6_l5p8d")
+
+[node name="Spawn_Line_2" type="Marker2D" parent="Spawner" unique_id=2141350746]
+position = Vector2(840, -192)
+scale = Vector2(1, 13.2)
+
+[node name="Spawn_Line_1" type="Marker2D" parent="Spawner" unique_id=793120868]
+position = Vector2(840, 0)
+scale = Vector2(1, 13.2)
+
+[node name="Spawn_Line_0" type="Marker2D" parent="Spawner" unique_id=536950423]
+position = Vector2(840, 192)
+scale = Vector2(1, 13.2)
+
+[node name="End_Line_2" type="Marker2D" parent="Spawner" unique_id=495271767]
+position = Vector2(-198, -192)
+scale = Vector2(1, 13.2)
+
+[node name="End_Line_1" type="Marker2D" parent="Spawner" unique_id=2123223644]
+position = Vector2(-198, 0)
+scale = Vector2(1, 13.2)
+
+[node name="End_Line_0" type="Marker2D" parent="Spawner" unique_id=948977997]
+position = Vector2(-198, 192)
+scale = Vector2(1, 13.2)

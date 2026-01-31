@@ -8,7 +8,9 @@ var current_note_index: int = 0
 
 var spawn_positions: Array[Vector2] = []
 var end_positions: Array[Vector2] = []
+
 func _ready() -> void:
+	# Pega as posições dos marcadores que você copiou
 	spawn_positions = [
 		$Spawn_Line_0.global_position,
 		$Spawn_Line_1.global_position,
@@ -31,8 +33,8 @@ func _process(_delta):
 	if Conductor.song_position >= target_time - travel_time:
 		_spawn_note(next_note)
 		current_note_index += 1
+		# Chama recursivamente caso tenha notas muito próximas (acordes)
 		_process(_delta)
-
 
 func _spawn_note(note_data):
 	var lane_id = note_data["lane"] # 0, 1 ou 2
@@ -49,22 +51,22 @@ func _spawn_note(note_data):
 	var distance = start_pos.distance_to(end_pos)
 	var speed = distance / travel_time
 	
+	# --- ATUALIZADO: Passa o lane_id no final ---
 	new_note.setup(
-		note_data["time"],    # Target Time
-		Conductor.song_position, # Spawn Time
+		note_data["time"],
+		Conductor.song_position,
 		start_pos,
 		end_pos,
-		speed
+		speed,
+		lane_id 
 	)
 
-# Função temporária para criarmos dados sem precisar de arquivos externos ainda
 func _load_test_map():
+	# Mapa de teste simples
 	map_data = [
-		{"time": 8.0, "lane": 0}, # Nota na linha 1 aos 2s
-		{"time": 10.0, "lane": 1}, # Nota na linha 2 aos 3s
-		{"time": 12.0, "lane": 2}, # Nota na linha 3 aos 4s
-		{"time": 14.0, "lane": 1}, # Nota rápida
-		{"time": 16.0, "lane": 0},
-		{"time": 20.0, "lane": 2}
-
+		{"time": 4.0, "lane": 0},
+		{"time": 6.0, "lane": 1},
+		{"time": 8.0, "lane": 2},
+		{"time": 9.0, "lane": 1},
+		{"time": 10.0, "lane": 0}
 	]
