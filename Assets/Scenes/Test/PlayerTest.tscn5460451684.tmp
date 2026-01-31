@@ -7,11 +7,6 @@
 
 [node name="Lines" type="Node2D" parent="."]
 
-[node name="Sprite2D3" type="Sprite2D" parent="Lines"]
-position = Vector2(832, 192)
-scale = Vector2(15, 0.1)
-texture = ExtResource("2_ugxin")
-
 [node name="Sprite2D" type="Sprite2D" parent="Lines"]
 position = Vector2(832, 0)
 scale = Vector2(15, 0.1)
@@ -22,6 +17,11 @@ position = Vector2(832, -192)
 scale = Vector2(15, 0.1)
 texture = ExtResource("2_ugxin")
 
+[node name="Sprite2D3" type="Sprite2D" parent="Lines"]
+position = Vector2(832, 192)
+scale = Vector2(15, 0.1)
+texture = ExtResource("2_ugxin")
+
 [node name="Player" parent="." instance=ExtResource("1_y8avt")]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
