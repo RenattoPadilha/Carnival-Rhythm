@@ -2,6 +2,7 @@ extends Node2D
 
 @export var note_scene: PackedScene = load("res://Assets/Prefabs/Notes/Note-1.tscn")
 @export var travel_time: float = 4.0
+@export var notes_per_beat: int = 1
 
 var map_data: Array = [] 
 var current_note_index: int = 0
@@ -10,7 +11,6 @@ var spawn_positions: Array[Vector2] = []
 var end_positions: Array[Vector2] = []
 
 func _ready() -> void:
-	# Pega as posições dos marcadores que você copiou
 	spawn_positions = [
 		$Spawn_Line_0.global_position,
 		$Spawn_Line_1.global_position,
@@ -21,7 +21,6 @@ func _ready() -> void:
 		$End_Line_1.global_position,
 		$End_Line_2.global_position
 	]
-	_load_test_map()
 	
 func _process(_delta):
 	if current_note_index >= map_data.size():
@@ -61,12 +60,39 @@ func _spawn_note(note_data):
 		lane_id 
 	)
 
-func _load_test_map():
-	# Mapa de teste simples
-	map_data = [
-		{"time": 4.0, "lane": 0},
-		{"time": 6.0, "lane": 1},
-		{"time": 8.0, "lane": 2},
-		{"time": 9.0, "lane": 1},
-		{"time": 10.0, "lane": 0}
-	]
+func generate_map():
+	map_data.clear()
+	current_note_index = 0
+	
+	var total_measures = Conductor.get_total_measures_in_song()
+	var sec_per_beat = Conductor.sec_per_beat
+	var beats_per_measure = Conductor.measures # Geralmente é 4
+	
+	if total_measures <= 0 or sec_per_beat <= 0:
+		return
+
+	var interval = sec_per_beat * beats_per_measure
+	
+	var total_steps = total_measures 
+	
+	var current_time = 0.0
+	var last_lane = -1
+	
+	for i in range(total_steps):
+		
+		if i < 1: # Pula apenas o index 0 (primeiro compasso)
+			current_time += interval
+			continue
+		
+		var new_lane = randi() % 3
+		
+		if new_lane == last_lane and randf() > 0.5:
+			new_lane = (new_lane + 1) % 3
+		last_lane = new_lane
+		
+		map_data.append({
+			"time": current_time,
+			"lane": new_lane
+		})
+		
+		current_time += interval

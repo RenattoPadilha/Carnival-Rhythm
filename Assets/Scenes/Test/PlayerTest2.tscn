@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b5h4qflbot4pu"]
+[gd_scene load_steps=0 format=3 uid="uid://b5h4qflbot4pu"]
 
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_wvl65"]
 [ext_resource type="PackedScene" uid="uid://d173poj0gsaby" path="res://Assets/Prefabs/Characters/player.tscn" id="2_yvtu2"]

@@ -43,3 +43,13 @@ func play_from_start():
 	song_position = 0.0
 	last_reported_beat = 0
 	play()
+	
+func get_total_measures_in_song() -> int:
+	if not stream:
+		return 0
+		
+	var song_length_sec = stream.get_length()
+	var measure_duration_sec = sec_per_beat * measures
+	var total = floor(song_length_sec / measure_duration_sec)
+	
+	return int(total)
