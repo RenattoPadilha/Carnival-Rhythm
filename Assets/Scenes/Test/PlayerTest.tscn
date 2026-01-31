@@ -1,15 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://m0vjdjk1tjmy"]
+[gd_scene load_steps=6 format=3 uid="uid://m0vjdjk1tjmy"]
 
 [ext_resource type="PackedScene" uid="uid://d173poj0gsaby" path="res://Assets/Prefabs/Characters/player.tscn" id="1_y8avt"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="2_ugxin"]
 [ext_resource type="Script" uid="uid://bhoc7tuwxmfkb" path="res://Assets/Scripts/teste_musica.gd" id="3_2nn5y"]
 [ext_resource type="AudioStream" uid="uid://deiqk02nvi0i8" path="res://Assets/Art/Sounds/Samba Playback (100 bpm) _ Surdo  Pandeiro  Tamborim (clave 1).mp3" id="4_h40gu"]
+[ext_resource type="Script" uid="uid://cb2jwvnouh7o4" path="res://Assets/Scripts/NoteSpawner.gd" id="5_v4kqx"]
 
 [node name="PlayerTest" type="Node2D"]
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-200, -192)
-scale = Vector2(1, 13.2)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -216.0
@@ -42,7 +39,34 @@ position = Vector2(-192, 0)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(264, 0)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Teste" type="Node2D" parent="."]
 script = ExtResource("3_2nn5y")
 level_music = ExtResource("4_h40gu")
 bpm = 100
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("5_v4kqx")
+
+[node name="Spawn_Line_2" type="Marker2D" parent="Spawner"]
+position = Vector2(840, -192)
+scale = Vector2(1, 13.2)
+
+[node name="Spawn_Line_1" type="Marker2D" parent="Spawner"]
+position = Vector2(840, 0)
+scale = Vector2(1, 13.2)
+
+[node name="Spawn_Line_0" type="Marker2D" parent="Spawner"]
+position = Vector2(840, 192)
+scale = Vector2(1, 13.2)
+
+[node name="End_Line_2" type="Marker2D" parent="Spawner"]
+position = Vector2(-198, -192)
+scale = Vector2(1, 13.2)
+
+[node name="End_Line_1" type="Marker2D" parent="Spawner"]
+position = Vector2(-198, 0)
+scale = Vector2(1, 13.2)
+
+[node name="End_Line_0" type="Marker2D" parent="Spawner"]
+position = Vector2(-198, 192)
+scale = Vector2(1, 13.2)
