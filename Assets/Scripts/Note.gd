@@ -39,3 +39,31 @@ func destroy_on_hit():
 
 func _on_miss():
 	queue_free()
+
+# ... (seu código existente)
+
+# Adicione esta função para ser chamada pelo Player/Input quando ele apertar o botão
+func get_accuracy() -> float:
+	# O Conductor já está calculando a posição atual da música
+	var current_time = Conductor.song_position
+	# A diferença entre o momento ideal (target) e o momento atual
+	return target_time - current_time
+
+func destroy_on_hit1():
+	was_hit = true
+	# Aqui calculamos a pontuação antes de destruir
+	var accuracy = get_accuracy()
+	
+	ScoreManager.register_hit(accuracy)
+	
+	queue_free()
+
+func _on_miss1():
+	# Se a nota passou e o jogador não apertou
+	if not was_hit:
+		ScoreManager.register_miss()
+		queue_free()
+		
+func _ready():
+	add_to_group("notas")
+   

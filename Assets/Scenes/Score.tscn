@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dgmmvub3dty8m"]
+
+[ext_resource type="Script" uid="uid://brhf07u7tie1a" path="res://Assets/Scripts/label_Scene.gd" id="1_nlotb"]
+
+[node name="Score" type="Node2D" unique_id=911321027]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1278501351]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2112753550]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_nlotb")
