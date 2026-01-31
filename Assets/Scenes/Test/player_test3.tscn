@@ -1,17 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://b45m1juvqh0cr"]
+[gd_scene load_steps=9 format=3 uid="uid://nudnppxvjx2y"]
 
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_ixued"]
+[ext_resource type="Texture2D" uid="uid://cdrjgn8t2i0m2" path="res://Assets/Art/Background/OlindaEscarlate.png" id="1_ja4eh"]
 [ext_resource type="PackedScene" uid="uid://d173poj0gsaby" path="res://Assets/Prefabs/Characters/player.tscn" id="2_l5p8d"]
+[ext_resource type="Texture2D" uid="uid://bvjt68utvff7x" path="res://Assets/Art/Foreground/FrontRed.png" id="2_u10tq"]
 [ext_resource type="Script" uid="uid://bhoc7tuwxmfkb" path="res://Assets/Scripts/teste_musica.gd" id="3_ja4eh"]
 [ext_resource type="AudioStream" uid="uid://deiqk02nvi0i8" path="res://Assets/Art/Sounds/Samba Playback (100 bpm) _ Surdo  Pandeiro  Tamborim (clave 1).mp3" id="4_u10tq"]
 [ext_resource type="PackedScene" path="res://Assets/Scenes/Score.tscn" id="5_rivo0"]
-[ext_resource type="Script" uid="uid://cb2jwvnouh7o4" path="res://Assets/Scripts/NoteSpawner.gd" id="6_l5p8d"]
+[ext_resource type="Script" path="res://Assets/Scripts/NoteSpawner.gd" id="6_l5p8d"]
 
 [node name="PlayerTest" type="Node2D"]
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-200, -192)
-scale = Vector2(1, 13.2)
+[node name="Background" type="Parallax2D" parent="."]
+z_index = -10
+scroll_offset = Vector2(0, -72)
+repeat_size = Vector2(2400, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ja4eh")
+
+[node name="Foreground" type="Parallax2D" parent="."]
+z_index = 10
+scroll_offset = Vector2(0, -72)
+repeat_size = Vector2(2400, 0)
+autoscroll = Vector2(200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_u10tq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -216.0
