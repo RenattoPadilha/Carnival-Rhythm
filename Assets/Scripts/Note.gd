@@ -26,7 +26,7 @@ func _process(_delta):
 	#Calc new X position
 	var time = Conductor.song_position
 	var time_diff = target_time - time
-	var new_x = end_x - (time_diff * speed)
+	var new_x = end_x + (time_diff * speed)
 	position.x = new_x
 	
 	if time > target_time + 0.2:
