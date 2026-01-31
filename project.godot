@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 Conductor="*res://Assets/Autoload/Conductor.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 Action={
