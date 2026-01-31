@@ -135,10 +135,10 @@ offset_bottom = 40.0
 
 [node name="CheckButton" type="CheckButton" parent="." unique_id=1363866378]
 layout_mode = 0
-offset_left = 922.0
-offset_top = 573.00006
-offset_right = 966.0
-offset_bottom = 597.00006
+offset_left = -89.00006
+offset_top = -1100.9998
+offset_right = -45.00006
+offset_bottom = -1076.9998
 scale = Vector2(3.08001, 2.9600048)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
