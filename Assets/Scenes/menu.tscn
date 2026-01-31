@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cmrr68flkgd5k"]
 
+[ext_resource type="Script" uid="uid://bois8bg6e0j8x" path="res://Assets/Scenes/background_menu.gd" id="1_pkw8u"]
 [ext_resource type="Texture2D" uid="uid://own3fwca2kme" path="res://Assets/pngtree-a-black-pixelated-musical-note-icon-in-retro-8-bit-style-vector-png-image_15997624.png" id="1_trrmg"]
 [ext_resource type="FontFile" uid="uid://csapjdw3b8iy2" path="res://Assets/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="2_sph7x"]
+[ext_resource type="Script" uid="uid://0pkn2m28jubg" path="res://Assets/Scenes/letter_swapbackground.gd" id="4_fjdk5"]
+[ext_resource type="Script" uid="uid://bj4vdvpvstdus" path="res://Assets/Scenes/creditos.gd" id="4_j1b4o"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_sph7x"]
 diffuse_texture = ExtResource("1_trrmg")
@@ -19,20 +22,46 @@ layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0.3687258, 0.31452185, 1)
+script = ExtResource("1_pkw8u")
 
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="." unique_id=1168088791]
-position = Vector2(291, 622)
+[node name="10" type="CPUParticles2D" parent="." unique_id=1168088791]
+position = Vector2(497.00003, 745)
 scale = Vector2(3.8, 1)
 amount = 1
 texture = SubResource("CanvasTexture_sph7x")
-lifetime = 18.0
-use_fixed_seed = true
-seed = 689034
+lifetime = 5.1
 fixed_fps = 60
 direction = Vector2(-1, 0)
-gravity = Vector2(2980, -980)
+gravity = Vector2(100, -100)
 angular_velocity_max = 1.0
-orbit_velocity_max = 20.0
+linear_accel_min = 5.0
+linear_accel_max = 10.0
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="." unique_id=1172918458]
+position = Vector2(1035, 573)
+scale = Vector2(3.8, 1)
+amount = 1
+texture = SubResource("CanvasTexture_sph7x")
+lifetime = 5.0
+fixed_fps = 60
+direction = Vector2(-1, 0)
+gravity = Vector2(-50, -100)
+angular_velocity_max = 0.5
+orbit_velocity_max = 0.01
+linear_accel_min = 5.0
+linear_accel_max = 10.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="." unique_id=1984213403]
+position = Vector2(150, 933)
+scale = Vector2(3.8, 1)
+amount = 1
+texture = SubResource("CanvasTexture_sph7x")
+lifetime = 10.0
+fixed_fps = 60
+direction = Vector2(-1, 0)
+gravity = Vector2(100, -100)
+angular_velocity_max = 0.5
+orbit_velocity_max = 0.05
 linear_accel_min = 5.0
 linear_accel_max = 10.0
 
@@ -41,39 +70,96 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -476.0
-offset_top = 63.0
-offset_right = 532.0
-offset_bottom = 208.0
+offset_left = -493.0
+offset_top = 49.0
+offset_right = 515.0
+offset_bottom = 194.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_sph7x")
 theme_override_font_sizes/font_size = 120
 text = "Carnaval Rhythm"
 
-[node name="Button" type="Button" parent="." unique_id=263317759]
+[node name="Start" type="Button" parent="." unique_id=263317759]
 layout_mode = 0
-offset_left = -88.0
-offset_top = 248.0
-offset_right = 1275.0
-offset_bottom = 325.0
+offset_left = -19.0
+offset_top = 286.0
+offset_right = 481.0
+offset_bottom = 386.0
+rotation = -0.08726646
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_font_sizes/font_size = 50
 text = "Começar a folia"
+flat = true
+script = ExtResource("4_fjdk5")
 
-[node name="Button2" type="Button" parent="." unique_id=844730139]
+[node name="Creditos" type="Button" parent="." unique_id=844730139]
 layout_mode = 0
-offset_left = -4.9999695
-offset_top = 366.0
-offset_right = 1440.7467
-offset_bottom = 511.0
-scale = Vector2(0.84039617, 0.8400012)
-theme_override_font_sizes/font_size = 80
+offset_left = -33.999992
+offset_top = 402.99997
+offset_right = 366.0
+offset_bottom = 521.0
+rotation = -0.08726646
+scale = Vector2(0.84039617, 0.8278189)
+theme_override_font_sizes/font_size = 50
 text = "Créditos"
+flat = true
+script = ExtResource("4_j1b4o")
 
-[node name="Button3" type="Button" parent="." unique_id=754448550]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2065553965]
+position = Vector2(-13, 559.00006)
+rotation = -0.08726645
+polygon = PackedVector2Array(4.98098, 0.43579102, 1200.6874, -1.3583374, 1192.1724, 210.70648, -3.435646, 108.11194)
+
+[node name="Exit" type="Button" parent="." unique_id=754448550]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 536.0
-offset_right = 1151.0
-offset_bottom = 586.0
-theme_override_font_sizes/font_size = 30
+offset_left = -13.000004
+offset_top = 559.00006
+offset_right = 737.0
+offset_bottom = 659.00006
+rotation = -0.08726646
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.5396542, 0.53965414, 0.5396542, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.368734, 0.30943933, 0)
+theme_override_colors/icon_focus_color = Color(0.003921569, 0.36862746, 0.30980393, 1)
+theme_override_colors/icon_pressed_color = Color(0.003921569, 0.36862746, 0.30980393, 1)
+theme_override_colors/icon_hover_color = Color(0.003921569, 0.36862746, 0.30980393, 1)
+theme_override_font_sizes/font_size = 50
 text = "Sair para a área de trabalho"
+flat = true
+
+[node name="Panel" type="Panel" parent="." unique_id=455538613]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1363866378]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 573.00006
+offset_right = 966.0
+offset_bottom = 597.00006
+scale = Vector2(3.08001, 2.9600048)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+
+[node name="Label2" type="Label" parent="." unique_id=481669526]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -114.0
+offset_right = -27.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Habilitar/Desabilitar
+Volume"
+
+[connection signal="pressed" from="Creditos" to="Creditos" method="_on_pressed"]
