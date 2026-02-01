@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bfyftj0bf0c1h"]
+
+[ext_resource type="Script" uid="uid://dekdsjjmfueef" path="res://Assets/Scripts/HowToPlay.gd" id="1_6867x"]
+[ext_resource type="Texture2D" uid="uid://ttihi7fc5bip" path="res://Assets/Telas/How to play.png" id="1_oa2wq"]
+[ext_resource type="Texture2D" uid="uid://uwjmr8ni50s4" path="res://Assets/Telas/MenuBotao.png" id="2_d3al6"]
+
+[node name="HowToPlay" type="Control" unique_id=203353100]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6867x")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2014388468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_oa2wq")
+
+[node name="Menu" type="TextureButton" parent="." unique_id=877348441]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 528.0
+offset_right = 838.0
+offset_bottom = 614.0
+texture_pressed = ExtResource("2_d3al6")
+texture_hover = ExtResource("2_d3al6")
+texture_focused = ExtResource("2_d3al6")
+
+[connection signal="pressed" from="Menu" to="." method="_on_botao_menu_pressed"]

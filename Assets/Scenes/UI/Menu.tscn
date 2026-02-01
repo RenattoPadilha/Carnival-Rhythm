@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://10r6ddhe3u5v"]
+
+[ext_resource type="Texture2D" uid="uid://ci4fmia8u61l4" path="res://Assets/Telas/UI tela.png" id="1_067lj"]
+[ext_resource type="Script" uid="uid://bm3k7hgwm4i8u" path="res://Assets/Scripts/menu.gd" id="1_uy378"]
+[ext_resource type="Texture2D" uid="uid://c0dirx5x1qgup" path="res://Assets/Telas/BotaoStart.png" id="2_vxdqd"]
+[ext_resource type="Texture2D" uid="uid://c4hbmrr7dwdf4" path="res://Assets/Telas/BotaoHowtoplay.png" id="3_uy378"]
+[ext_resource type="Texture2D" uid="uid://c4m74boobh6o3" path="res://Assets/Telas/BotaoCredits.png" id="4_7jfe4"]
+
+[node name="Menu" type="Control" unique_id=1933721581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uy378")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1723542096]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_067lj")
+
+[node name="Start" type="TextureButton" parent="." unique_id=763878805]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 264.0
+offset_right = 521.0
+offset_bottom = 460.0
+texture_pressed = ExtResource("2_vxdqd")
+texture_hover = ExtResource("2_vxdqd")
+texture_focused = ExtResource("2_vxdqd")
+
+[node name="HowToPlay" type="TextureButton" parent="." unique_id=1431873482]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 360.0
+offset_right = 521.0
+offset_bottom = 556.0
+texture_pressed = ExtResource("3_uy378")
+texture_hover = ExtResource("3_uy378")
+texture_focused = ExtResource("3_uy378")
+
+[node name="Credits" type="TextureButton" parent="." unique_id=308113103]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 456.0
+offset_right = 520.0
+offset_bottom = 632.0
+texture_pressed = ExtResource("4_7jfe4")
+texture_hover = ExtResource("4_7jfe4")
+texture_focused = ExtResource("4_7jfe4")
+
+[connection signal="pressed" from="Start" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="HowToPlay" to="." method="_on_botao_howto_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_botao_credits_pressed"]
