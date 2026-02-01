@@ -12,10 +12,10 @@
 [ext_resource type="Script" uid="uid://xtvwofa0won0" path="res://Assets/Scripts/SceneryWorldChanger.gd" id="5_okr82"]
 [ext_resource type="Script" uid="uid://bhoc7tuwxmfkb" path="res://Assets/Scripts/teste_musica.gd" id="6_2px76"]
 [ext_resource type="Texture2D" uid="uid://dt5dmck8cbjov" path="res://Assets/Art/Foreground/FrontGreen.png" id="7_dfwfl"]
-[ext_resource type="AudioStream" uid="uid://c80lmampw3own" path="res://Assets/Art/Sounds/Carnaval - WIP 2.ogg" id="7_o6uxi"]
 [ext_resource type="Texture2D" uid="uid://ctstf5y77ljdu" path="res://Assets/Art/Foreground/FrontBlue.png" id="8_okr82"]
 [ext_resource type="PackedScene" uid="uid://dgmmvub3dty8m" path="res://Assets/Scenes/Score.tscn" id="8_rvpxg"]
 [ext_resource type="Script" uid="uid://cb2jwvnouh7o4" path="res://Assets/Scripts/NoteSpawner.gd" id="9_f1046"]
+[ext_resource type="AudioStream" uid="uid://doqqsjpsmic3o" path="res://Assets/Art/Sounds/Carnaval de Vinil.ogg" id="14_frgo4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo87w"]
 texture = ExtResource("2_f0cdj")
@@ -4955,7 +4955,7 @@ position = Vector2(264, 0)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=830543651]
 script = ExtResource("6_2px76")
-level_music = ExtResource("7_o6uxi")
+level_music = ExtResource("14_frgo4")
 bpm = 121
 
 [node name="Score" parent="." unique_id=1551281402 instance=ExtResource("8_rvpxg")]
