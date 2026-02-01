@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var lane_visuals: Array[Texture2D] 
+const LANE_POSITIONS = [143, 17, -143]
+
 # Spawner Config
 var target_time: float = 0.0
 var spawn_time: float = 0.0
@@ -51,3 +54,17 @@ func _on_miss():
 	if not was_hit:
 		ScoreManager.register_miss()
 		queue_free()
+
+
+func setup_visuals(current_lane_index: int):
+	for i in range(3):
+		if i != current_lane_index:
+			var sprite = Sprite2D.new()
+			sprite.texture = lane_visuals[i]
+			
+			add_child(sprite)
+			
+			sprite.global_position = Vector2(global_position.x, LANE_POSITIONS[i])
+			sprite.scale = Vector2(0.5, 0.5)
+			
+			# sprite.modulate = Color(0.5, 0.5, 0.5, 1) # Opcional: Escurecer

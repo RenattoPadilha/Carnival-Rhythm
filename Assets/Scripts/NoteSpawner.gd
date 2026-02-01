@@ -59,6 +59,7 @@ func _spawn_note(note_data):
 		speed,
 		lane_id 
 	)
+	new_note.setup_visuals(lane_id)
 
 func generate_map():
 	map_data.clear()

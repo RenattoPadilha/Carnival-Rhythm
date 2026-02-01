@@ -1,19 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://brbokqlsi8jca"]
+[gd_scene format=3 uid="uid://brbokqlsi8jca"]
 
 [ext_resource type="Texture2D" uid="uid://own3fwca2kme" path="res://Assets/pngtree-a-black-pixelated-musical-note-icon-in-retro-8-bit-style-vector-png-image_15997624.png" id="1_fdvlv"]
 [ext_resource type="Script" uid="uid://fxa1ej4wdoex" path="res://Assets/Scripts/Note.gd" id="1_y380j"]
+[ext_resource type="Texture2D" uid="uid://glttwbdyj05w" path="res://Assets/Art/Obstacles/RedObstacacleDown.png" id="2_82p54"]
+[ext_resource type="Texture2D" uid="uid://cooy7vvuv83af" path="res://Assets/Art/Obstacles/RedObstacacleMid.png" id="3_sexlt"]
+[ext_resource type="Texture2D" uid="uid://b276jo10edcph" path="res://Assets/Art/Obstacles/RedObstacacleTop.png" id="4_e4307"]
 
-[node name="Note1" type="Node2D"]
+[node name="Note1" type="Node2D" unique_id=9329070]
 script = ExtResource("1_y380j")
+lane_visuals = Array[Texture2D]([ExtResource("2_82p54"), ExtResource("3_sexlt"), ExtResource("4_e4307")])
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=662890154]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_fdvlv")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1230440265]
 offset_left = -112.0
 offset_top = -64.0
 offset_right = -72.0
 offset_bottom = -41.0
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1213710815]
