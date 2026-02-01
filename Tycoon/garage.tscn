@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://0fsmf1cv84m1"]
+
+[ext_resource type="Texture2D" uid="uid://wv3l442fuv1a" path="res://Tycoon/Sprite-0003.png" id="1_t7tgx"]
+
+[node name="Node2D" type="Node2D" unique_id=969337862]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1905327909]
+position = Vector2(278, 359)
+texture = ExtResource("1_t7tgx")

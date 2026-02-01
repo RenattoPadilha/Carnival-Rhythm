@@ -5,9 +5,15 @@
 [ext_resource type="FontFile" uid="uid://csapjdw3b8iy2" path="res://Assets/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="2_sph7x"]
 [ext_resource type="Script" uid="uid://0pkn2m28jubg" path="res://Assets/Scenes/letter_swapbackground.gd" id="4_fjdk5"]
 [ext_resource type="Script" uid="uid://bj4vdvpvstdus" path="res://Assets/Scenes/creditos.gd" id="4_j1b4o"]
+[ext_resource type="Script" uid="uid://5ajjjg2nvlt8" path="res://Assets/Scenes/exit.gd" id="6_dkalm"]
+[ext_resource type="Script" uid="uid://d1wry4tgnrf3d" path="res://Assets/Scenes/voltar_credits_btn.gd" id="6_hnoqu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_sph7x"]
 diffuse_texture = ExtResource("1_trrmg")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dkalm"]
+
+[sub_resource type="Theme" id="Theme_vd8hb"]
 
 [node name="Control" type="Control" unique_id=902416814]
 layout_mode = 3
@@ -77,33 +83,34 @@ offset_bottom = 194.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_sph7x")
 theme_override_font_sizes/font_size = 120
-text = "Carnaval Rhythm"
+text = "Carnival Rhythm"
 
 [node name="Start" type="Button" parent="." unique_id=263317759]
 layout_mode = 0
-offset_left = -19.0
-offset_top = 286.0
-offset_right = 481.0
-offset_bottom = 386.0
+offset_left = 91.0
+offset_top = 249.57787
+offset_right = 591.0
+offset_bottom = 349.57788
 rotation = -0.08726646
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_font_sizes/font_size = 50
-text = "Começar a folia"
+text = "Let's go to folia!"
 flat = true
 script = ExtResource("4_fjdk5")
 
-[node name="Creditos" type="Button" parent="." unique_id=844730139]
+[node name="Creditos" type="Button" parent="." unique_id=844730139 node_paths=PackedStringArray("panel")]
 layout_mode = 0
-offset_left = -33.999992
-offset_top = 402.99997
-offset_right = 366.0
-offset_bottom = 521.0
+offset_left = 63.0
+offset_top = 324.57788
+offset_right = 463.0
+offset_bottom = 442.5779
 rotation = -0.08726646
 scale = Vector2(0.84039617, 0.8278189)
 theme_override_font_sizes/font_size = 50
-text = "Créditos"
+text = "Credits"
 flat = true
 script = ExtResource("4_j1b4o")
+panel = NodePath("../Panel")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2065553965]
 position = Vector2(-13, 559.00006)
@@ -124,14 +131,70 @@ theme_override_colors/icon_focus_color = Color(0.003921569, 0.36862746, 0.309803
 theme_override_colors/icon_pressed_color = Color(0.003921569, 0.36862746, 0.30980393, 1)
 theme_override_colors/icon_hover_color = Color(0.003921569, 0.36862746, 0.30980393, 1)
 theme_override_font_sizes/font_size = 50
-text = "Sair para a área de trabalho"
+text = "Exit to desktop"
 flat = true
+script = ExtResource("6_dkalm")
 
 [node name="Panel" type="Panel" parent="." unique_id=455538613]
-visible = false
+material = SubResource("CanvasItemMaterial_dkalm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -284.00003
+offset_top = -37.0
+offset_right = 64.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.08726646
+theme = SubResource("Theme_vd8hb")
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=1460461562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.9923894
+offset_top = -0.17431147
+offset_right = -1.9923706
+offset_bottom = -0.1743164
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Panel" unique_id=452968383]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -899.8288
+offset_top = -338.07547
+offset_right = -318.8286
+offset_bottom = -53.07547
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Credits:
+Main Developer: Renatto Padilha
+Assistant Developer: Gabriel Carvalho
+Game Designer: William
+Sound Designer: Lucas
+UI/UX Designer: Caio Leitão"
+
+[node name="Button" type="Button" parent="Panel" unique_id=911618486 node_paths=PackedStringArray("panel")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 312.94382
+offset_top = 174.94055
+offset_right = 559.94385
+offset_bottom = 265.94055
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = " <- Back "
+script = ExtResource("6_hnoqu")
+panel = NodePath("..")
 
 [node name="CheckButton" type="CheckButton" parent="." unique_id=1363866378]
 layout_mode = 0
@@ -159,7 +222,9 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Habilitar/Desabilitar
+text = "Enable/disable
 Volume"
 
 [connection signal="pressed" from="Creditos" to="Creditos" method="_on_pressed"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
