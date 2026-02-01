@@ -35,7 +35,7 @@ func verificar_acerto():
 		
 		# --- FILTRO DE LINHA ---
 		# Se a nota não for da mesma linha que o player, ignora
-		if nota.lane_index != minha_linha:
+		if nota.lane_index != minha_linha or nota.required_world_type != WorldManager.current_world_index:
 			continue
 		
 		var distancia = abs(nota.target_time - tempo_musica)

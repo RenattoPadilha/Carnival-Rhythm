@@ -3,15 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://own3fwca2kme" path="res://Assets/pngtree-a-black-pixelated-musical-note-icon-in-retro-8-bit-style-vector-png-image_15997624.png" id="1_fdvlv"]
 [ext_resource type="Script" uid="uid://fxa1ej4wdoex" path="res://Assets/Scripts/Note.gd" id="1_y380j"]
 [ext_resource type="Texture2D" uid="uid://glttwbdyj05w" path="res://Assets/Art/Obstacles/RedObstacacleDown.png" id="2_82p54"]
+[ext_resource type="Texture2D" uid="uid://i0smj6ucsfyj" path="res://Assets/Art/Notes/RedNote.png" id="2_uw1hr"]
+[ext_resource type="Texture2D" uid="uid://bjjay7n7vu5fd" path="res://Assets/Art/Notes/GreenNote.png" id="3_nj56u"]
 [ext_resource type="Texture2D" uid="uid://cooy7vvuv83af" path="res://Assets/Art/Obstacles/RedObstacacleMid.png" id="3_sexlt"]
+[ext_resource type="Texture2D" uid="uid://cwxd12oivo6st" path="res://Assets/Art/Notes/BlueNote.png" id="4_0ol4x"]
 [ext_resource type="Texture2D" uid="uid://b276jo10edcph" path="res://Assets/Art/Obstacles/RedObstacacleTop.png" id="4_e4307"]
+[ext_resource type="Texture2D" uid="uid://cvqm7112g7c66" path="res://Assets/Art/Obstacles/BlueObstacacleDown.png" id="5_mdd2r"]
+[ext_resource type="Texture2D" uid="uid://4u65behj4gdj" path="res://Assets/Art/Obstacles/BlueObstacacleMid.png" id="6_kj65s"]
+[ext_resource type="Texture2D" uid="uid://dyfit066lgwvt" path="res://Assets/Art/Obstacles/BlueObstacacleTop.png" id="7_1v8jn"]
+[ext_resource type="Texture2D" uid="uid://bvuwm48dp8qto" path="res://Assets/Art/Obstacles/GreenObstacacleDown.png" id="8_uw1hr"]
+[ext_resource type="Texture2D" uid="uid://bx8wb7djide23" path="res://Assets/Art/Obstacles/GreenObstacacleMid.png" id="9_nj56u"]
+[ext_resource type="Texture2D" uid="uid://cxol4lu07qw4v" path="res://Assets/Art/Obstacles/GreenObstacacleTop.png" id="10_0ol4x"]
 
 [node name="Note1" type="Node2D" unique_id=9329070]
 script = ExtResource("1_y380j")
-lane_visuals = Array[Texture2D]([ExtResource("2_82p54"), ExtResource("3_sexlt"), ExtResource("4_e4307")])
+target_world_textures = Array[Texture2D]([ExtResource("2_uw1hr"), ExtResource("3_nj56u"), ExtResource("4_0ol4x")])
+visuals_world_0 = Array[Texture2D]([ExtResource("2_82p54"), ExtResource("3_sexlt"), ExtResource("4_e4307")])
+visuals_world_1 = Array[Texture2D]([ExtResource("8_uw1hr"), ExtResource("9_nj56u"), ExtResource("10_0ol4x")])
+visuals_world_2 = Array[Texture2D]([ExtResource("5_mdd2r"), ExtResource("6_kj65s"), ExtResource("7_1v8jn")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=662890154]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_fdvlv")
 
 [node name="Label" type="Label" parent="." unique_id=1230440265]

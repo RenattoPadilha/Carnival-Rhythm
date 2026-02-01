@@ -1,6 +1,14 @@
 extends Node2D
 
-@export var lane_visuals: Array[Texture2D] 
+@export var target_world_textures: Array[Texture2D]
+@export var visuals_world_0: Array[Texture2D]
+@export var visuals_world_1: Array[Texture2D]
+@export var visuals_world_2: Array[Texture2D]
+
+var required_world_type: int = 0
+var all_worlds_visuals: Array = []
+var active_visual_sprites: Dictionary = {}
+#----------------------------------------
 const LANE_POSITIONS = [143, 17, -143]
 
 # Spawner Config
@@ -27,6 +35,10 @@ func setup(t_time: float, t_spawn: float, p_start: Vector2, p_end: Vector2, p_sp
 
 func _ready():
 	add_to_group("notas") # Importante para o Player encontrar a nota
+	required_world_type = randi() % 3
+	$Sprite2D.texture = target_world_textures[required_world_type]
+	all_worlds_visuals = [visuals_world_0, visuals_world_1, visuals_world_2]
+	WorldManager.world_changed.connect(_update_visuals_texture)
 
 func _process(_delta):
 	if was_hit:
@@ -55,16 +67,30 @@ func _on_miss():
 		ScoreManager.register_miss()
 		queue_free()
 
-
 func setup_visuals(current_lane_index: int):
 	for i in range(3):
 		if i != current_lane_index:
 			var sprite = Sprite2D.new()
-			sprite.texture = lane_visuals[i]
+			
+			# Salva o sprite no dicionário para podermos achar ele depois!
+			active_visual_sprites[i] = sprite
 			
 			add_child(sprite)
 			
+			# Posicionamento (Seu código existente)
 			sprite.global_position = Vector2(global_position.x, LANE_POSITIONS[i])
 			sprite.scale = Vector2(0.5, 0.5)
-			
 			# sprite.modulate = Color(0.5, 0.5, 0.5, 1) # Opcional: Escurecer
+	
+	_update_visuals_texture(WorldManager.current_world_index)
+
+func _update_visuals_texture(world_index: int):
+	if world_index >= all_worlds_visuals.size(): return
+	
+	var textures_for_this_world = all_worlds_visuals[world_index]
+	
+	for lane_idx in active_visual_sprites.keys():
+		var sprite_node = active_visual_sprites[lane_idx]
+		
+		if lane_idx < textures_for_this_world.size():
+			sprite_node.texture = textures_for_this_world[lane_idx]
