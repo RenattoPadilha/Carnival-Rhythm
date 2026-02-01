@@ -53,3 +53,7 @@ func get_total_measures_in_song() -> int:
 	var total = floor(song_length_sec / measure_duration_sec)
 	
 	return int(total)
+
+func stop_music():
+	stop()
+	song_position = 0.0

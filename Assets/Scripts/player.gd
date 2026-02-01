@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@export var game_over_scene: String = "res://Assets/Scenes/UI/GameOver.tscn"
+@export var hit_sound_player: AudioStreamPlayer
+
 signal has_died
 signal health_changed (curr_health: int, max_health: int)
 
@@ -47,12 +50,20 @@ func verificar_acerto():
 	# Janela de acerto (0.15s)
 	if nota_mais_proxima and menor_distancia < 0.15:
 		# Acerto!
+		if hit_sound_player:
+			hit_sound_player.play()
+		
 		var precisao = nota_mais_proxima.target_time - tempo_musica
 		ScoreManager.register_hit(precisao)
 		nota_mais_proxima.destroy_on_hit()
 	else:
 		# Erro (apertou sem nota perto na linha)
 		ScoreManager.register_miss()
+		var player = self
+		if player:
+			var health = player.get_node_or_null("HealthComponent")
+			if health:
+				health.apply_damage(1)
 
 # --- Funções de Vida/Morte ---
 func take_damage(damage: int) -> void:
@@ -65,5 +76,6 @@ func _on_health_changed(curr_health: int, max_health: int):
 	emit_signal("health_changed", curr_health, max_health)
 
 func _on_died() -> void:
-	emit_signal("has_died")
+	Conductor.stop_music()
+	get_tree().change_scene_to_file(game_over_scene)
 	queue_free()

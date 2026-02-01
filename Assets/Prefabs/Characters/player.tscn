@@ -3,16 +3,22 @@
 [ext_resource type="Script" uid="uid://de1d74s4cy2ay" path="res://Assets/Scripts/player.gd" id="1_hvy1d"]
 [ext_resource type="SpriteFrames" uid="uid://ewon1m7j8tkn" path="res://Assets/Resources/wayana.tres" id="2_2d7px"]
 [ext_resource type="Script" uid="uid://ctvj1wcykqexw" path="res://Assets/Scripts/PlayerHealth.gd" id="2_202x8"]
+[ext_resource type="AudioStream" uid="uid://dsrp1stuk24wx" path="res://Assets/Art/Sounds/Acerto.ogg" id="2_bkq8r"]
 [ext_resource type="Script" uid="uid://jjluxrg0c4rb" path="res://Assets/Scripts/CharacterWorldChanger.gd" id="3_jx1ug"]
 [ext_resource type="Script" uid="uid://cnrog210g10es" path="res://Assets/Scripts/PlayerMovement.gd" id="4_2d7px"]
 [ext_resource type="SpriteFrames" uid="uid://dbvnh6dcuoy6q" path="res://Assets/Resources/la_ursa.tres" id="4_skq4e"]
 [ext_resource type="SpriteFrames" uid="uid://c1pecg8in3exf" path="res://Assets/Resources/guara.tres" id="5_bkq8r"]
+[ext_resource type="AudioStream" uid="uid://s3r1q2ylw1rq" path="res://Assets/Art/Sounds/Erro.ogg" id="7_skq4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_202x8"]
 size = Vector2(112, 112)
 
-[node name="Player" type="CharacterBody2D" unique_id=8190752]
+[node name="Player" type="CharacterBody2D" unique_id=8190752 node_paths=PackedStringArray("hit_sound_player")]
 script = ExtResource("1_hvy1d")
+hit_sound_player = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2105153443]
+stream = ExtResource("2_bkq8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1237922308]
 position = Vector2(0, -8)
@@ -26,8 +32,13 @@ skins = Array[SpriteFrames]([ExtResource("4_skq4e"), ExtResource("2_2d7px"), Ext
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028257842]
 shape = SubResource("RectangleShape2D_202x8")
 
-[node name="HealthComponent" type="Node" parent="." unique_id=205441970]
+[node name="HealthComponent" type="Node" parent="." unique_id=205441970 node_paths=PackedStringArray("damage_sound")]
 script = ExtResource("2_202x8")
+damage_sound = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HealthComponent" unique_id=190372006]
+stream = ExtResource("7_skq4e")
+volume_db = 5.0
 
 [node name="MovementComponent" type="Node" parent="." unique_id=352566941]
 script = ExtResource("4_2d7px")

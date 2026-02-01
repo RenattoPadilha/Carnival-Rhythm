@@ -65,6 +65,12 @@ func destroy_on_hit():
 func _on_miss():
 	if not was_hit:
 		ScoreManager.register_miss()
+		
+		var player = get_tree().current_scene.find_child("Player", true, false)
+		if player:
+			var health = player.get_node_or_null("HealthComponent")
+			if health:
+				health.apply_damage(1)
 		queue_free()
 
 func setup_visuals(current_lane_index: int):
