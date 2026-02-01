@@ -4913,6 +4913,7 @@ script = ExtResource("2_l0hgu")
 world_sprites = Array[Texture2D]([ExtResource("3_eob2x"), ExtResource("7_dfwfl"), ExtResource("8_okr82")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1807252853]
+visible = false
 offset_left = -216.0
 offset_top = -264.0
 offset_right = -176.0
