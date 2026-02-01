@@ -15,4 +15,4 @@ func _ready():
 		text = "Erro: Player não achado"
 
 func _update_text(current, max_hp):
-	text = "VIDA: " + str(current) + " / " + str(max_hp)
+	text = "Lives: " + str(current) + " / " + str(max_hp)

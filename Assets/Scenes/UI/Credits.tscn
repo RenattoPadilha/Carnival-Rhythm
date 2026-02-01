@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ccai0pu2njfcv" path="res://Assets/Scripts/Credits.gd" id="1_0qanj"]
 [ext_resource type="Texture2D" uid="uid://dx1hnfpibpcyh" path="res://Assets/Telas/Creditos.png" id="1_rxc7t"]
 [ext_resource type="Texture2D" uid="uid://uwjmr8ni50s4" path="res://Assets/Telas/MenuBotao.png" id="2_0qanj"]
+[ext_resource type="PackedScene" uid="uid://dgmmvub3dty8m" path="res://Assets/Scenes/Score.tscn" id="4_eoitb"]
 
 [node name="Credits" type="Control" unique_id=2021607609]
 layout_mode = 3
@@ -28,5 +29,7 @@ offset_bottom = 614.0
 texture_pressed = ExtResource("2_0qanj")
 texture_hover = ExtResource("2_0qanj")
 texture_focused = ExtResource("2_0qanj")
+
+[node name="Score" parent="." unique_id=911321027 instance=ExtResource("4_eoitb")]
 
 [connection signal="pressed" from="Menu" to="." method="_on_botao_menu_pressed"]

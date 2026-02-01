@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bb1531l0v4jva" path="res://Assets/Scripts/GameOver.gd" id="1_diu4k"]
 [ext_resource type="Texture2D" uid="uid://cyf6boa0gahy5" path="res://Assets/Telas/GameOver.png" id="1_h4gtq"]
 [ext_resource type="Texture2D" uid="uid://uwjmr8ni50s4" path="res://Assets/Telas/MenuBotao.png" id="2_4tjhv"]
+[ext_resource type="PackedScene" uid="uid://dgmmvub3dty8m" path="res://Assets/Scenes/Score.tscn" id="4_e77tp"]
 
 [node name="GameOver" type="Control" unique_id=1280492608]
 layout_mode = 3
@@ -35,5 +36,7 @@ offset_bottom = 422.0
 texture_pressed = ExtResource("2_4tjhv")
 texture_hover = ExtResource("2_4tjhv")
 texture_focused = ExtResource("2_4tjhv")
+
+[node name="Score" parent="." unique_id=911321027 instance=ExtResource("4_e77tp")]
 
 [connection signal="pressed" from="Menu" to="." method="_on_botao_menu_pressed"]

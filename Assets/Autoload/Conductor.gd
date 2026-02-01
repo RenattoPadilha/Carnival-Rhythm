@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 signal beat_emitted(beat_number: int)
 signal measure_emitted(measure_number: int)
+const CENA_CREDITOS = "res://Assets/Scenes/UI/Credits.tscn"
 
 @export var bpm: int = 120
 @export var measures: int = 4
@@ -14,6 +15,7 @@ var audio_offset: float = 0.0
 
 func _ready() -> void:
 	audio_offset = AudioServer.get_output_latency()
+	finished.connect(_on_song_finished)
 
 func load_song(music_stream: AudioStream, new_bpm: int, new_measures: int = 4):
 	stream = music_stream
@@ -57,3 +59,7 @@ func get_total_measures_in_song() -> int:
 func stop_music():
 	stop()
 	song_position = 0.0
+	
+func _on_song_finished():
+	stop() 
+	get_tree().change_scene_to_file(CENA_CREDITOS)
