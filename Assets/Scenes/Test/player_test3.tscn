@@ -4874,6 +4874,7 @@ tile_map_data = PackedByteArray("AADa/+v/AAAAACkAAADa/+z/AAAAACoAAADa/+3/AAAAACs
 tile_set = SubResource("TileSet_shcth")
 
 [node name="Foreground" type="Parallax2D" parent="."]
+visible = false
 z_index = 10
 scroll_offset = Vector2(0, -72)
 repeat_size = Vector2(2400, 0)
@@ -4895,22 +4896,22 @@ scale = Vector2(1, 13.2)
 position = Vector2(-184, 0)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Lines"]
-position = Vector2(832, 192)
+position = Vector2(832, 143)
 scale = Vector2(15, 0.1)
 texture = ExtResource("1_ixued")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lines"]
-position = Vector2(832, 0)
+position = Vector2(832, 17)
 scale = Vector2(15, 0.1)
 texture = ExtResource("1_ixued")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Lines"]
-position = Vector2(832, -192)
+position = Vector2(832, -143)
 scale = Vector2(15, 0.1)
 texture = ExtResource("1_ixued")
 
 [node name="Player" parent="." instance=ExtResource("2_l5p8d")]
-position = Vector2(-192, 0)
+position = Vector2(-192, 143)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(264, 0)
@@ -4926,25 +4927,25 @@ bpm = 100
 script = ExtResource("6_l5p8d")
 
 [node name="Spawn_Line_2" type="Marker2D" parent="Spawner"]
-position = Vector2(840, -192)
+position = Vector2(840, -143)
 scale = Vector2(1, 13.2)
 
 [node name="Spawn_Line_1" type="Marker2D" parent="Spawner"]
-position = Vector2(840, 0)
+position = Vector2(840, 17)
 scale = Vector2(1, 13.2)
 
 [node name="Spawn_Line_0" type="Marker2D" parent="Spawner"]
-position = Vector2(840, 192)
+position = Vector2(840, 143)
 scale = Vector2(1, 13.2)
 
 [node name="End_Line_2" type="Marker2D" parent="Spawner"]
-position = Vector2(-198, -192)
+position = Vector2(-198, -143)
 scale = Vector2(1, 13.2)
 
 [node name="End_Line_1" type="Marker2D" parent="Spawner"]
-position = Vector2(-198, 0)
+position = Vector2(-198, 17)
 scale = Vector2(1, 13.2)
 
 [node name="End_Line_0" type="Marker2D" parent="Spawner"]
-position = Vector2(-198, 192)
+position = Vector2(-198, 143)
 scale = Vector2(1, 13.2)
